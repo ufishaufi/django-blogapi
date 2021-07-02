@@ -8,7 +8,7 @@ from .models import Post
 from .permissions import IsAuthorOrReadOnly
 from .serializer import PostSerializer, UserSerializer
 
-
+'''
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -25,6 +25,7 @@ class UserList(generics.ListCreateAPIView):
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
+'''
 
 class PostViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthorOrReadOnly,)
@@ -33,4 +34,4 @@ class PostViewSet(viewsets.ModelViewSet):
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = get_user_model().objects.all()
-    serializer_class = PostSerializer
+    serializer_class = UserSerializer
